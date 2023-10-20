@@ -1,0 +1,17 @@
+[all:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_ssh_private_key_file='~/.ssh/pve-server'
+
+[loadbalancer]
+10.0.0.101
+
+[webserver]
+10.0.0.102
+10.0.0.103
+
+[database]
+10.0.0.104
+
+[control]
+localhost   ansible_connection=local

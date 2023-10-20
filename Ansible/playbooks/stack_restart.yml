@@ -1,0 +1,27 @@
+# Bring stack down
+- hosts: loadbalancer
+  tasks:
+    - service: name=nginx state=stopped
+    - wait_for: port=80 state=drained
+
+- hosts: webserver
+  tasks:
+    - service: name=apache2 state=stopped
+    - wait_for: port=80 state=stopped
+
+# Restart mysql
+- hosts: database
+  tasks:
+    - service: name=mysql state=restarted
+    - wait_for: port=3306
+
+# Bring back up
+- hosts: loadbalancer
+  tasks:
+    - service: name=nginx state=started
+    - wait_for: port=80
+
+- hosts: webserver
+  tasks:
+    - service: name=apache2 state=started
+    - wait_for: port=80
