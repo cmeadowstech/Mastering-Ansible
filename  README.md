@@ -1,8 +1,8 @@
-# https://www.udemy.com/course/mastering-ansible/
+# [Mastering Ansible](https://www.udemy.com/course/mastering-ansible/)
 
-My repro for the above Udemy course, which was recommended to me by a friend who found it quite useful when he started working with Ansible.
+My repro for the above Udemy course, which was recommended to me by a friend who found it useful when he started working with Ansible.
 
-Unfortunately some of the content is quite, old, but I've so far been able to update most of the issues I've run into so far.
+Unfortunately some of the content is quite, old, but I've so far been able to update most of the issues I've run into.
 - Demo app was built with Python 2, so had to update dependencies because I'm running Ubuntu 22
 - my.conf location has been updated
 - MySQL dependencies differ largely due to Python 3
